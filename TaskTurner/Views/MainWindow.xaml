@@ -14,5 +14,70 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="140" />
         </Grid.ColumnDefinitions>
+
+        <!-- Nav panel -->
+        <Rectangle Fill="{StaticResource AccentDark}" Grid.Column="0"/>
+
+        <!-- Task List Background -->
+        <Rectangle Fill="{StaticResource TaskListBackground}" Grid.Column="1"/>
+
+        <!-- Task List Grid -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="38"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Task Label -->
+            <Label Style="{StaticResource Heading1}" 
+                   VerticalAlignment="Top"
+                   Padding="20 0 0 0"
+                   IsHitTestVisible="False"
+                   Content="Tasks" />
+
+            <!-- Add New Task buton -->
+            <Button Style="{StaticResource RoundAccentButton}"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Height="40"
+                    Width="40" 
+                    Margin="0 0 20 0">
+                <!-- Icon -->
+                <Viewbox Height="25"
+                         Width="25">
+                    <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}"/>
+                </Viewbox>
+            </Button>
+
+            <!-- Search Panel -->
+            <TextBox x:Name="TaskSearchBox"
+                Style="{StaticResource TaskListSearchBox}"
+                Grid.Row="1"
+                Margin="20 0"/>
+            <Label IsHitTestVisible="False"
+                   Content="Search tasks..." 
+                   Grid.Row="1"
+                   VerticalAlignment="Center"
+                   Margin="40 0 0 0"
+                   Foreground="{StaticResource Borders}"
+                   Visibility="{Binding Text.IsEmpty, ElementName=TaskSearchBox, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Button Style="{StaticResource SearchButton}" 
+                    HorizontalAlignment="Left" 
+                    Margin="375,0,0,0" 
+                    VerticalAlignment="Center" 
+                    Background="White"
+                    BorderBrush="Transparent"
+                    Width="30"
+                    Height="30" Grid.Row="1">
+                <Viewbox Width="16" Height="16">
+                    <Path Data="{StaticResource SearchIcon}" Fill="{StaticResource Borders}"/>
+                </Viewbox>
+            </Button>
+
+        </Grid>
+
+        <!-- Task status Bar -->
+        <Rectangle Fill="{StaticResource TaskStatusBackground}" Grid.Column="3" />
     </Grid>
 </Window>

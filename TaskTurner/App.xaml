@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="/Dictionamies/Icons.xaml"/>
                 <ResourceDictionary Source="/Dictionamies/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
