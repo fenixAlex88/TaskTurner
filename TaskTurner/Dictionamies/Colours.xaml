@@ -46,4 +46,8 @@
     <SolidColorBrush x:Key="Progress-Archived" Color="#FFC8A36C" />
     <SolidColorBrush x:Key="Progress-Deleted" Color="#FF606060" />
 
+    <SolidColorBrush x:Key="Nav.Default" Color="Transparent" />
+    <SolidColorBrush x:Key="Nav.Over" Color="#FF396A84" />
+    <SolidColorBrush x:Key="Nav.Click" Color="#FF87B7D0" />
+
 </ResourceDictionary>
