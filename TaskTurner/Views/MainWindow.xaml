@@ -74,7 +74,103 @@
                     <Path Data="{StaticResource SearchIcon}" Fill="{StaticResource Borders}"/>
                 </Viewbox>
             </Button>
+            
+            <!--List View For Task Items-->
+            <ListView Grid.Row="2"
+                      Background="Transparent"
+                      Margin="0 20" 
+                      BorderBrush="Transparent"/>
 
+        </Grid>
+
+        <!--Task Viewer-->
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            
+            <!--Task Details-->
+            <Grid Grid.Row="0"
+                  Margin="20 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Task Title"
+                         Style="{StaticResource Title}"
+                         VerticalAlignment="Center"/>
+                
+                <!--Importance Badge-->
+                <Border HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Padding="20 5"
+                        CornerRadius="5"
+                        Background="{StaticResource Importence-Crit}">
+                    <TextBlock Text="Critical" Foreground="{StaticResource OnAccent}" FontWeight="Bold"/>
+                </Border>
+                
+                <!--Description Scroll Bar-->
+                <ScrollViewer Grid.Row="1"
+                              VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <!--Description-->
+                    <TextBlock Text="This is a short descriptoin test."
+                           FontSize="16"
+                           Foreground="{StaticResource PlaceholderText}"
+                           Margin="0 20"/>
+                </ScrollViewer>
+               
+                <!--Due Date-->
+                <TextBlock Text="Due: 17/12/2023"
+                           Background="{StaticResource AccentDark}"
+                           Padding="20 3"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Grid.Row="2"
+                           Foreground="White"/>
+
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  Margin="0 20 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <!--List Title-->
+                <TextBlock Style="{StaticResource Title}" Text="Task Check List"
+                           VerticalAlignment="Center" Margin="20 0 0 0"/>
+                <!--Check Lists-->
+                <ListView Grid.Row="1"
+                    Background="Transparent"
+                          BorderThickness="0"
+                          >
+                
+                </ListView>
+            </Grid>
+            
+            <!--Task View Buttons-->
+            <Grid Grid.Row="2">
+                <Button Style="{StaticResource TaslViewDeleteButton}"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Content="Delete"
+                        Margin="20 0 0 0"/>
+                <Button Style="{StaticResource TaslViewEditButton}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="Edit"/>
+                <Button Style="{StaticResource TaslViewCompleteButton}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Content="Complete"
+                        Margin="0 0 20 0"/> 
+            </Grid>
+            
         </Grid>
 
         <!-- Task status Bar -->
