@@ -10,22 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TaskTurner.ViewModels;
 
-namespace TaskTurner
+namespace TaskTurner.Views
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для NewTaskWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NewTaskWindow : Window
     {
-        public MainWindow()
+        public NewTaskWindow()
         {
             InitializeComponent();
-
-            this.DataContext = new TaskViewModel();
         }
     }
 }
